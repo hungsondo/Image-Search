@@ -1,0 +1,26 @@
+
+
+Q:
+    - Trọng số để so sánh kết quả
+    - Cách trích xuất đặc trưng
+    - show kết quả
+    - show sự khác biệt trên số, kiểu khoảng cách
+    - show đặc trưng, cấu trúc file
+    - tại sao file đặc trưng lại bằng này số, nhiều số 0 thế này có giảm đc ko, nếu ko giảm đc, tại sao lại chắc chắn là tính đúng
+
+A:
+    Sử dụng 1 đặc trưng là màu sắc để tìm kiếm ảnh
+
+    Mỗi kênh H,S,V sẽ có 256 giá trị,mỗi kênh sẽ chia thành x khoảng (là số bin trong code đấy), 8*12*3=288 giá trị
+    
+    Mỗi dòng tương ứng 1 ảnh: cột 1 là tên ảnh, các cột từ 2->288 là các giá trị trong biểu đồ histogram của ảnh
+
+    Cách trích xuất đặc trưng: Vẽ mặt nạ elip kích thước cao 0.75 gốc và rộng 0.6 gốc với gốc là chính giữa ảnh , 
+    trích xuất đặc trưng từ biểu đồ histogram của mặt nạ elip và trả về vector đặc trưng của ảnh
+    
+    Cách lưu trữ đặc trưng: dùng vòng lặp để ghi vector đặc trưng từng ảnh vào từng dòng trong file lưu trữ đặc trưng index.csv
+
+    Cách so sánh, tìm kiếm: sử dụng khoảng cách chi square  (đọc là kai sờ que hoặc chi bình phương) để so sánh vector đậc trưng 
+    của ảnh đầu vào và các vector đặc trưng trong file lưu trữ đặc trưng index.csv
+ 
+    print(results) là để sâu ra trọng số khoảng cách, đó cơ sở để sắp xếp độ tương đồng giữa ảnh đầu vào và ảnh trong dataset

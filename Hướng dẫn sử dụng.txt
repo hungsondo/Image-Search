@@ -1,0 +1,10 @@
+Chạy lệnh này để sỉnh ra file csv:
+
+	python index.py --dataset dataset --index index.csv
+
+Chạy lệnh này để tìm kiếm:
+
+	python search.py --index index.csv --query dataset/4.jpg --result-path dataset
+
+Có thể thay đổi dataset/4.jpg bằng đường dẫn của ảnh khác tùy ý, ví dụ : dataset/7.jpg
+
